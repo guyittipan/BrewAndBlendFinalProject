@@ -1,0 +1,54 @@
+
+Scene Setup Instructions - Full Package
+--------------------------------------
+
+Files to import: place all .cs files into Assets/Scripts/
+
+Scene: EntranceScene
+- Create Canvas -> Add Start Button (UI Button)
+- Create empty GameObject 'SceneController' and attach EntranceSceneController
+- Drag Start Button into 'startButton'
+- Create GameController prefab in a persistent scene OR put GameController in a bootstrap scene
+
+Scene: TutorialScene
+- Create Canvas -> Add Play Button
+- Create empty GameObject 'SceneController' and attach TutorialSceneController
+- Link Play Button and GameController reference
+
+Scene: GameplayScene
+- Create Canvas -> add UI Text elements: ScoreText, TimerText, ComboText
+- Create GameObject 'GameSystems' and attach: RecipeDatabase, IngredientSpawner, Board, MixSystem, ScoreSystem, ComboSystem, RankSystem, TimerSystem, UIManager, GameplayUI, GameController
+- Assign references:
+    - Board.cells: assign 9 Cell GameObjects each having Cell.cs, Button, Image, and child placeholder
+    - IngredientSpawner.ingredientPrefabs: add Ingredient prefabs created for Coffee, Milk, Caramel, Chocolate
+    - MixSystem.recipeDB -> RecipeDatabase
+    - MixSystem.board -> Board
+    - MixSystem.scoreSystem -> ScoreSystem
+    - MixSystem.comboSystem -> ComboSystem
+    - UIManager.scoreText -> ScoreText, timerText -> TimerText, comboText -> ComboText
+    - GameplayUI.uiManager -> UIManager
+    - GameplayUI.timer -> TimerSystem
+    - GameplayUI.scoreSystem -> ScoreSystem
+    - GameplayUI.comboSystem -> ComboSystem
+    - GameController.timer -> TimerSystem
+    - GameController.scoreSystem -> ScoreSystem
+    - GameController.rankSystem -> RankSystem
+
+- Create Recipe assets: Right click -> Create -> Game -> Recipe
+  Fill recipeName, baseScore, ingredientA, ingredientB
+- Add recipes to RecipeDatabase (drag the assets into list in inspector)
+
+Start flow:
+- Call TimerSystem.StartTimer() to begin round (hook this to Start Game button or GameController start)
+- Timer will tick and call UI update via GameplayUI
+- On time up, ensure GameController.EndGame() is called to load ThankScene
+
+Scene: ThankScene
+- Create Canvas -> Add Text for score and rank and Back Button
+- Create empty GameObject 'SceneController' and attach ThankSceneController
+- Link references in inspector
+
+Notes:
+- Prefabs for ingredients should include Ingredient.cs and visual representation (sprite)
+- Cells should update their Image when SetIngredient is called. You can extend Cell.SetIngredient to assign sprite.
+- This package provides code only. Create UI layout and visuals in Unity Editor.

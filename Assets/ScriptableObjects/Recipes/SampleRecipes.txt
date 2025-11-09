@@ -1,0 +1,12 @@
+
+Suggested sample recipes (name : ingredientA + ingredientB = baseScore)
+Parfait : Caramel + Chocolate = 150
+Mocha : Coffee + Chocolate = 140
+Dark Chocolate : Chocolate + Chocolate = 130
+Caramel Macchiato : Coffee + Caramel = 125
+Brown Sugar : Caramel + Caramel = 120
+Latte : Milk + Coffee = 115
+Caramel Milk : Milk + Caramel = 110
+Cocoa : Milk + Chocolate = 105
+Americano : Coffee + Coffee = 95
+Fresh Milk : Milk + Milk = 90
