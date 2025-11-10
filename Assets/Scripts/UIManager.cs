@@ -1,12 +1,15 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class UIManager : MonoBehaviour {
     [Header("Gameplay UI")]
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Text timerText;
-    [SerializeField] private Text comboText;
+    [SerializeField] private TMP_Text scoreText;
+[SerializeField] private TMP_Text timerText;
+[SerializeField] private TMP_Text comboText;
+
 
     public void UpdateScore(int score) {
         if (scoreText != null) scoreText.text = score.ToString();

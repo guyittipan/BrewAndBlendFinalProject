@@ -1,26 +1,52 @@
-
 using UnityEngine;
 
-public class ComboSystem : MonoBehaviour {
+public class ComboSystem : MonoBehaviour
+{
     private string lastRecipe = string.Empty;
     private int comboCount = 0;
-    [SerializeField] private int baseComboBonus = 10;
+    [SerializeField] private float maxMultiplier = 5f; // จำกัดคอมโบสูงสุด เช่น คูณ5
 
-    public int UpdateCombo(string recipeName) {
-        if (recipeName == lastRecipe) {
+    private UIManager uiManager;
+
+    private void Start()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+
+        if (uiManager != null)
+            uiManager.UpdateCombo(0);
+    }
+
+    // เรียกตอนผสมสำเร็จ
+    public float UpdateCombo(string recipeName)
+    {
+        if (recipeName == lastRecipe)
+        {
             comboCount++;
-        } else {
+        }
+        else
+        {
             lastRecipe = recipeName;
             comboCount = 1;
         }
-        int bonus = baseComboBonus * (comboCount - 1);
-        Debug.Log($"Combo {comboCount} for {recipeName}. Bonus {bonus}");
-        return bonus;
+
+        // คูณตามคอมโบ แต่ไม่เกิน maxMultiplier
+        float multiplier = Mathf.Min(comboCount, maxMultiplier);
+
+        if (uiManager != null)
+            uiManager.UpdateCombo(comboCount);
+
+        Debug.Log($"Combo {comboCount}x for {recipeName}. Multiplier = {multiplier}");
+        return multiplier;
     }
 
-    public void ResetCombo() {
+    // เรียกตอนผสมไม่สำเร็จหรือเปลี่ยนสูตร
+    public void ResetCombo()
+    {
         lastRecipe = string.Empty;
         comboCount = 0;
+
+        if (uiManager != null)
+            uiManager.UpdateCombo(0);
     }
 
     public int GetComboCount() => comboCount;
