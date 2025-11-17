@@ -23,4 +23,20 @@ public class GameManager : MonoBehaviour
         // โหลดซีน Gameplay
         SceneManager.LoadScene("Gameplay");
     }
+      public void GoToMainMenu()
+    {
+        StartCoroutine(PlayClickAndGoToMainMenu());
+    }
+
+    private IEnumerator PlayClickAndGoToMainMenu()
+    {
+        if (clickSound != null)
+        {
+            clickSound.Play();
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        SceneManager.LoadScene("Entrance");
+    }
 }
+

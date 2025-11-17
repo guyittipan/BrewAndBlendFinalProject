@@ -1,5 +1,4 @@
-﻿
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 public class Board : MonoBehaviour {
@@ -37,6 +36,29 @@ public class Board : MonoBehaviour {
             }
         }
     }
+
+    // 👇👇 STEP 5: ฟังก์ชัน Reroll ทั้งกระดาน
+    public void RerollAll() {
+        if (spawner == null || cells == null || cells.Length == 0) return;
+
+        for (int i = 0; i < cells.Length; i++) {
+            var cell = cells[i];
+            if (cell == null) continue;
+
+            // ลบ ingredient เดิมถ้ามี
+            if (cell.CurrentIngredient != null) {
+                Destroy(cell.CurrentIngredient.gameObject);
+            }
+
+            // เคลียร์สถานะ cell ให้เป็นว่าง
+            cell.Clear();
+
+            // สุ่ม ingredient ใหม่ลงไป
+            var ing = spawner.GetRandomIngredientInstance(transform);
+            cell.SetIngredient(ing);
+        }
+    }
+
     // เรียกใช้จาก Editor script หรือเมนู context
     public void AutoAssignCellsFromChildren()
     {

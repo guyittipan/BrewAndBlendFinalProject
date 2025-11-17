@@ -820,6 +820,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -901,6 +902,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e521e946157ec43b87faaaccc0bde5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShaker
+  defaultDuration: 0.2
+  defaultMagnitude: 0.15
 --- !u!1 &590335685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,9 +2863,11 @@ MonoBehaviour:
   board: {fileID: 2001745872}
   scoreSystem: {fileID: 2001745870}
   comboSystem: {fileID: 2001745869}
+  timerSystem: {fileID: 2001745867}
   mixResultUI: {fileID: 881478980}
   audioSource: {fileID: 2001745876}
   successSound: {fileID: 8300000, guid: 2114605d1f2bf714289e1d35a682c6e6, type: 3}
+  burntCoffeeSound: {fileID: 8300000, guid: 453c5f4cd20bb6049ac6446469ee50d5, type: 3}
 --- !u!114 &2001745872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2891,11 +2908,17 @@ MonoBehaviour:
   - {fileID: 6183158993642385849, guid: c6d19ad5c1df5c04c975fbd0f3fdda56, type: 3}
   - {fileID: 8998896696582315081, guid: aa5e199901ff3864387bc4ead4542453, type: 3}
   - {fileID: 3698207511541633124, guid: 9be3de9254a2568458365bfc0f8e7734, type: 3}
+  - {fileID: 8120617625305638144, guid: e2b384c11cb36ae47a43d0b6ba54c8f9, type: 3}
+  - {fileID: 5627426248038909137, guid: 25de6e6d40656424ca1dcf39b0560742, type: 3}
+  - {fileID: 2377987780825137840, guid: 8855ae3ea9de9174ead29062e334606c, type: 3}
   spawnWeights:
   - 2
   - 2
   - 3
   - 3
+  - 0.8
+  - 0.5
+  - 0.3
 --- !u!114 &2001745874
 MonoBehaviour:
   m_ObjectHideFlags: 0

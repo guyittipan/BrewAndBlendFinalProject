@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using UnityEngine.SceneManagement;   // สำหรับโหลด Scene
+using UnityEngine.SceneManagement; // สำหรับโหลด Scene
 
 public class TimerSystem : MonoBehaviour {
     [SerializeField] private float timeLimit = 120f;
@@ -34,6 +34,34 @@ public class TimerSystem : MonoBehaviour {
         running = false;
         uiManager?.UpdateTimer(remaining);
     }
+
+    // ✅ ฟังก์ชันใหม่สำหรับ Burnt Coffee
+    public void ReduceTime(float amount) {
+        remaining -= amount;
+        if (remaining < 0) remaining = 0;
+
+        // อัปเดตเวลาใน UI ทันที
+        uiManager?.UpdateTimer(remaining);
+
+        // เรียก Tick event เผื่อมีคนฟัง
+        OnTick?.Invoke(remaining);
+
+        // ถ้าหมดเวลา → จัดการเหมือนใน Update()
+        if (remaining <= 0f) {
+            running = false;
+            OnTimeUp?.Invoke();
+            StartCoroutine(GoToScoreAfterDelay());
+        }
+    }
+    public void AddTime(float amount) {
+    remaining += amount;
+    // อยากให้เวลาไม่เกิน timeLimit ก็คลุมไว้
+    if (remaining > timeLimit) remaining = timeLimit;
+
+    // อัปเดต UI ทันที
+    uiManager?.UpdateTimer(remaining);
+}
+
 
     private void Update() {
         if (!running) return;

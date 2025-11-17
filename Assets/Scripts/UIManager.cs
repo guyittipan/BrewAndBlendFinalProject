@@ -7,8 +7,9 @@ using TMPro;
 public class UIManager : MonoBehaviour {
     [Header("Gameplay UI")]
     [SerializeField] private TMP_Text scoreText;
-[SerializeField] private TMP_Text timerText;
-[SerializeField] private TMP_Text comboText;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text comboText;
+
 
 
     public void UpdateScore(int score) {

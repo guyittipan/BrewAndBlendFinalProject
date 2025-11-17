@@ -4,5 +4,8 @@ public enum IngredientType {
     Coffee,
     Milk,
     Caramel,
-    Chocolate
+    Chocolate,
+    BurntCoffee,
+    GoldenMilk,        
+    RerollChocolate
 }
