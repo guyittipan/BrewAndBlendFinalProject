@@ -18,6 +18,8 @@ public class MixSystem : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip successSound;
     [SerializeField] private AudioClip burntCoffeeSound;   // 👈 เพิ่มอันนี้
+    [SerializeField] private AudioClip rerollSound;
+    [SerializeField] private AudioClip goldenMilkSound; 
 
 
 
@@ -163,48 +165,71 @@ private void OnSelectGoldenMilk(Cell cell)
         timerSystem.AddTime(5f);   // ปรับจำนวนวินาทีได้ตามใจ
     }
 
-    // 2) อาจจะให้โบนัสคอมโบ/คะแนนเล็กน้อยก็ได้ แต่ตอนนี้เอาแค่เพิ่มเวลา
+    // 2) เล่นเสียง Golden Milk
+    if (audioSource != null && goldenMilkSound != null)
+    {
+        audioSource.PlayOneShot(goldenMilkSound);
+    }
 
-    // 3) ลบ ingredient ออกจาก cell
+    // 3) กล้องสั่นเบา ๆ ให้รู้สึกดี
+    var shaker = FindObjectOfType<CameraShaker>();
+    if (shaker != null)
+    {
+        shaker.Shake(0.15f, 0.08f);   // สั่นเบา ๆ นุ่มกว่า Burnt Coffee
+    }
+
+    // 4) ลบ ingredient ออกจาก cell
     if (cell.CurrentIngredient != null)
     {
         Destroy(cell.CurrentIngredient.gameObject);
     }
     cell.Clear();
 
-    // 4) เติมของใหม่ในช่องนี้
+    // 5) เติมของใหม่ในช่องนี้
     if (board != null)
     {
         board.RefillEmpty();
     }
 
-    // ไม่ต้องยุ่งกับ selectedA/B เพราะมันไม่ใช่ส่วนผสมใช้ผสม
+    // 6) รีเซ็ตตัวเลือก
     selectedA = null;
     selectedB = null;
 }
+
 private void OnSelectRerollChocolate(Cell cell)
 {
     Debug.Log("Reroll Chocolate clicked! Reroll all board!");
 
-    // 1) ลบตัว reroll เองจาก cell (เผื่อ Board.RerollAll ไม่จัดการ)
+    // 1) เล่นเสียง reroll
+    if (audioSource != null && rerollSound != null)
+    {
+        audioSource.PlayOneShot(rerollSound);
+    }
+
+    // 2) กล้องหมุน + สั่นเบา ๆ
+    var shaker = FindObjectOfType<CameraShaker>();
+    if (shaker != null)
+    {
+        shaker.Shake(0.2f, 0.1f);   // สั่นนิดหน่อย
+        
+    }
+
+    // 3) ลบตัว reroll เองจาก cell
     if (cell.CurrentIngredient != null)
     {
         Destroy(cell.CurrentIngredient.gameObject);
     }
     cell.Clear();
 
-    // 2) เรียกให้ Board สุ่มใหม่ทั้งกระดาน
+    // 4) Reroll ทั้งกระดาน
     if (board != null)
     {
         board.RerollAll();
     }
 
-    // 3) รีเซ็ตตัวเลือก A/B
+    // 5) รีเซ็ตตัวเลือก A/B
     selectedA = null;
     selectedB = null;
-
-    // ถ้าอยากมี SFX หรือกล้องเขย่าก็เพิ่มตรงนี้ได้
-    // เช่น shaker.Shake(0.3f, 0.2f);
 }
 
 
