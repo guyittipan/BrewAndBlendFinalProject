@@ -3159,10 +3159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c04e9302f4e594a9b9830f3cc442ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RankSystem
-  bronze: 5000
-  silver: 8000
-  gold: 10000
-  platinum: 15000
+  bronze: 1
+  silver: 5000
+  gold: 8000
+  platinum: 12000
 --- !u!114 &2001745869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,8 +3262,8 @@ MonoBehaviour:
   - 3
   - 3
   - 0.8
-  - 0.1
-  - 0.1
+  - 0.2
+  - 0.2
 --- !u!114 &2001745874
 MonoBehaviour:
   m_ObjectHideFlags: 0
