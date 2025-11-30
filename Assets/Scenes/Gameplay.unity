@@ -1634,6 +1634,8 @@ RectTransform:
   - {fileID: 2024929057}
   - {fileID: 1396255464}
   - {fileID: 342131509}
+  - {fileID: 957946875}
+  - {fileID: 1453335484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1676,6 +1678,99 @@ MonoBehaviour:
     resultSprite: {fileID: 6369226393460360080, guid: cca33e801a583214789776fa54a8d1f5, type: 3}
   - recipeName: Parfait
     resultSprite: {fileID: 21300000, guid: f8f1db7ebe114034aae97733093576ca, type: 3}
+--- !u!1 &957946874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 957946875}
+  - component: {fileID: 957946878}
+  - component: {fileID: 957946877}
+  - component: {fileID: 957946876}
+  m_Layer: 5
+  m_Name: RerollEffectIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &957946875
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957946874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 881478979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -210.6, y: 6}
+  m_SizeDelta: {x: 631.6393, y: 705.53}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &957946876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957946874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5fd2998b11892d429b789a7f976391c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RerollEffectUI
+  iconImage: {fileID: 957946877}
+  popDuration: 0.12
+  showDuration: 0.35
+  settleDuration: 0.08
+  rotateSpeed: 200
+--- !u!114 &957946877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957946874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -855298285791758126, guid: f9c144f5207d9b349ad30f096fbe4c47, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &957946878
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957946874}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1009472105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2269,6 +2364,102 @@ RectTransform:
   m_AnchoredPosition: {x: 599.63, y: 301.71997}
   m_SizeDelta: {x: 477.41, y: 89.514}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1453335483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453335484}
+  - component: {fileID: 1453335487}
+  - component: {fileID: 1453335486}
+  - component: {fileID: 1453335485}
+  m_Layer: 5
+  m_Name: TimeChangeEffectIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1453335484
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453335483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 881478979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -210.60002, y: 6}
+  m_SizeDelta: {x: 679.8887, y: 679.89}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1453335485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453335483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7b71dfba3e62242b654d247cd53552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeChangeEffectUI
+  iconImage: {fileID: 1453335486}
+  plusTimeSprite: {fileID: 6937817954938267909, guid: 7b657f70d12691147b97bd2dd093449b, type: 3}
+  minusTimeSprite: {fileID: -6470460504253458178, guid: 48625f578df519741bbf71b4c89014ad, type: 3}
+  popDuration: 0.12
+  showDuration: 0.4
+  settleDuration: 0.1
+  shakeMagnitude: 8
+  shakeFrequency: 18
+--- !u!114 &1453335486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453335483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1453335487
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453335483}
+  m_CullTransparentMesh: 1
 --- !u!224 &1468723586 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4675539349346869699, guid: f12d32ffb158e5640b0b737077e27446, type: 3}
@@ -3020,6 +3211,8 @@ MonoBehaviour:
   burntCoffeeSound: {fileID: 8300000, guid: 453c5f4cd20bb6049ac6446469ee50d5, type: 3}
   rerollSound: {fileID: 8300000, guid: e6513dfb3efe165428e0cd4d0cf51b39, type: 3}
   goldenMilkSound: {fileID: 8300000, guid: 5fcd85a46d44ebb4b9becbe555e01064, type: 3}
+  rerollEffectUI: {fileID: 957946876}
+  timeChangeEffectUI: {fileID: 1453335485}
 --- !u!114 &2001745872
 MonoBehaviour:
   m_ObjectHideFlags: 0
