@@ -342,8 +342,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
+  m_sharedMaterial: {fileID: 4392016050375442558, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1058,8 +1058,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
+  m_sharedMaterial: {fileID: 4392016050375442558, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1582,10 +1582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2268,8 +2268,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Combo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
+  m_sharedMaterial: {fileID: 4392016050375442558, guid: 1e5f4b3066de2cb44bd049bc9b5fdfbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3159,10 +3159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c04e9302f4e594a9b9830f3cc442ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RankSystem
-  bronze: 2000
-  silver: 4000
-  gold: 6000
-  platinum: 8000
+  bronze: 5000
+  silver: 8000
+  gold: 10000
+  platinum: 15000
 --- !u!114 &2001745869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,8 +3262,8 @@ MonoBehaviour:
   - 3
   - 3
   - 0.8
-  - 0.5
-  - 0.3
+  - 0.1
+  - 0.1
 --- !u!114 &2001745874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3459,10 +3459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
